@@ -12,6 +12,14 @@ public class Editoriale {
         contenuto += notizia + "\n";
     }
 
+    public void svuotaEditoriale() {
+        contenuto = "";
+    }
+
+    public String stampaNotizia () {
+        return contenuto;
+    }
+
 
     public TipoRivista getTipoRivista() {
         return this.tipoRivista;

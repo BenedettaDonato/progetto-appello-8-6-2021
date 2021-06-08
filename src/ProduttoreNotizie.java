@@ -5,9 +5,9 @@ public class ProduttoreNotizie extends Thread{
     private Random random = new Random();
     private static final String CARATTERI = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     private int tempoProduzione;
-    private Pubblicatore pubblicatore;
+    private PubblicatoreImpl pubblicatore;
 
-    public ProduttoreNotizie(int tempoProduzione, Pubblicatore pubblicatore) {
+    public ProduttoreNotizie(int tempoProduzione, PubblicatoreImpl pubblicatore) {
         this.tempoProduzione = tempoProduzione;
         this.pubblicatore = pubblicatore;
     }
