@@ -1,25 +1,7 @@
-public class FruitoreNotizie {
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
-    private String idFruitoreNotizie;
-    PubblicatoreImpl pubblicatore;
-
-    public FruitoreNotizie(String idFruitoreNotizie, PubblicatoreImpl pubblicatore) {
-        this.idFruitoreNotizie = idFruitoreNotizie;
-        this.pubblicatore = pubblicatore;
-    }
-
-    public String getIdFruitoreNotizie() {
-        return this.idFruitoreNotizie;
-    }
-
-    public void run(){
-        pubblicatore.iscrizioneFruitore(this, TipoRivista.POLITICA);
-        pubblicatore.iscrizioneFruitore(this, TipoRivista.ATTUALITA);
-    }
-    /*
-    public static void main (String[] args){
-        FruitoreNotizie fruitoreNotizie = new FruitoreNotizie("1", );
-    }
-
-     */
+public interface FruitoreNotizie extends Remote {
+    String getIdFruitoreNotizie() throws RemoteException;
+    void notificaFruitori(String editoriale) throws RemoteException;
 }
