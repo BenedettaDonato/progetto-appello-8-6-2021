@@ -26,7 +26,7 @@ public class Pubblicatore {
         int numeroProduttoriNotizie = 5;
         ProduttoreNotizie arrayProduttoreNotizie[] = new ProduttoreNotizie[numeroProduttoriNotizie];
         for (int i = 0; i < numeroProduttoriNotizie ; ++i){
-            ProduttoreNotizie produttoreNotizie = new ProduttoreNotizie(5, pubblicatore);
+            ProduttoreNotizie produttoreNotizie = new ProduttoreNotizie(1, pubblicatore);
             produttoreNotizie.start();
             arrayProduttoreNotizie[i] = produttoreNotizie;
         }
