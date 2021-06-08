@@ -7,4 +7,13 @@ public class Editoriale {
         this.tipoRivista = tipoRivista;
         this.contenuto = new String();
     }
+
+    public void concatenaNotiza (String notizia) {
+        contenuto += notizia + "\n";
+    }
+
+
+    public TipoRivista getTipoRivista() {
+        return this.tipoRivista;
+    }
 }
