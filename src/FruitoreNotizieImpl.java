@@ -1,3 +1,4 @@
+import java.rmi.ConnectException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -17,21 +18,43 @@ public class FruitoreNotizieImpl extends UnicastRemoteObject implements Fruitore
     }
 
     @Override
-    public void notificaFruitori(String editoriale) throws RemoteException {
-        System.out.println(editoriale);
+    public synchronized void riceviEditoriale(String editoriale, TipoRivista tipoEditoriale) throws RemoteException {
+        System.out.println("Il fruitore " + getIdFruitoreNotizie() + " ha ricevuto \n" + tipoEditoriale + "\n" + editoriale);
         return;
     }
 
 
-    public static void main (String[] args) throws RemoteException, NotBoundException {
-        Registry reg = LocateRegistry.getRegistry(1099);
-        Pubblicatore pubblicatore = (Pubblicatore) reg.lookup("Pubblicatore");
+    public static void main (String[] args) throws RemoteException, NotBoundException, InterruptedException {
+        Pubblicatore pubblicatore = null;
+        while (true) {
+            try{
+                Registry reg = null;
+                if(args != null && args.length >= 1){
+                    reg = LocateRegistry.getRegistry(args[0],1099);     //Nel caso in cui FruitoreNotizie si trova su una macchina differente da Pubblicatore
+                } else {
+                    reg = LocateRegistry.getRegistry(1099);             //Nel caso in cui FruitoreNotizie si trova sulla stessa macchina di Pubblicatore
+                }
+                pubblicatore = (Pubblicatore) reg.lookup("Pubblicatore");
+                break;
+            }catch (ConnectException e) {
+                int x = 3;
+                System.err.println("Server NON trovato! Riprovo tra " + x + " secondi");
+                Thread.sleep(x * 1000);
+            }
+        }
 
-        FruitoreNotizieImpl fruitoreNotizie = new FruitoreNotizieImpl("1");
-        pubblicatore.iscrizioneFruitore(fruitoreNotizie, TipoRivista.POLITICA);
-        pubblicatore.iscrizioneFruitore(fruitoreNotizie, TipoRivista.ATTUALITA);
+        if(pubblicatore != null) {
+            FruitoreNotizieImpl fruitoreNotizie = new FruitoreNotizieImpl("1");
+            pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie, TipoRivista.POLITICA);
+            pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie, TipoRivista.ATTUALITA);
 
-        pubblicatore.rimozioneFruitore(fruitoreNotizie, TipoRivista.POLITICA);
+            pubblicatore.rimuoviInteresseFruitore(fruitoreNotizie, TipoRivista.POLITICA);
+
+            FruitoreNotizieImpl fruitoreNotizie1 = new FruitoreNotizieImpl("2");
+            pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie1, TipoRivista.POLITICA);
+        }else {
+            //Non dovrebbe mai accadere!
+            throw new NullPointerException("Pubblicatore non inizializzato, nonostante la connessione sia andata a buon fine");
+        }
     }
-
 }

@@ -12,11 +12,11 @@ public class Editoriale {
         contenuto += notizia + "\n";
     }
 
-    public void svuotaEditoriale() {
-        contenuto = "";
+    public void svuotaEditoriale() {    //Cancella l'elenco delle notizie
+        contenuto = new String();
     }
 
-    public String stampaNotizia () {
+    public String getEditoriale() {
         return contenuto;
     }
 

@@ -3,5 +3,5 @@ import java.rmi.RemoteException;
 
 public interface FruitoreNotizie extends Remote {
     String getIdFruitoreNotizie() throws RemoteException;
-    void notificaFruitori(String editoriale) throws RemoteException;
+    void riceviEditoriale(String editoriale, TipoRivista tipoEditoriale) throws RemoteException;
 }
