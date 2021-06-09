@@ -25,8 +25,8 @@ public class ProduttoreNotizie extends Thread{
     public void run() {
         while(true) {
             int idRivista = random.nextInt(TipoRivista.values().length);
-            TipoRivista rivistaRandom = TipoRivista.values()[idRivista];    //Decide casualmente il tipo T della notizia da generare
-            String notizia = produciNotizia();  //Produce in modo causale una notizia
+            TipoRivista rivistaRandom = TipoRivista.values()[idRivista];    //Decide casualmente il tipo della notizia da generare.
+            String notizia = produciNotizia();                              //Produce in modo causale una notizia.
             pubblicatore.riceviNotizie(rivistaRandom, notizia);
             try {
                 Thread.sleep(tempoProduzione * 1000);
@@ -34,7 +34,6 @@ public class ProduttoreNotizie extends Thread{
                 e.printStackTrace();
             }
         }
-
     }
 }
 

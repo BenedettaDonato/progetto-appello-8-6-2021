@@ -20,7 +20,6 @@ public class Editoriale {
         return contenuto;
     }
 
-
     public TipoRivista getTipoRivista() {
         return this.tipoRivista;
     }

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c184b27b-92eb-4eca-adac-704517252c60" name="Default Changelist" comment="DAVIDE &amp; BENEDETTA&#10;- Modifica Secondo Pomeriggio&#10;(Introduzione RMI)">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="c184b27b-92eb-4eca-adac-704517252c60" name="Default Changelist" comment="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Editoriale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Editoriale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FruitoreNotizie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FruitoreNotizie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FruitoreNotizieImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FruitoreNotizieImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ProduttoreNotizie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduttoreNotizie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pubblicatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pubblicatore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PubblicatoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PubblicatoreImpl.java" afterDir="false" />
@@ -48,13 +45,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SimulazioneEsame_09_06_20" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CentroVaccinale2" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.18229854" />
     <property name="project.structure.side.proportion" value="0.152439" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.PubblicatoreImpl">
+  <component name="RunManager" selected="Application.FruitoreNotizieImpl">
     <configuration name="FruitoreNotizieImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FruitoreNotizieImpl" />
       <module name="progetto-appello-8-6-2021" />
@@ -82,8 +79,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PubblicatoreImpl" />
         <item itemvalue="Application.FruitoreNotizieImpl" />
+        <item itemvalue="Application.PubblicatoreImpl" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +95,7 @@
       <workItem from="1623143288583" duration="43000" />
       <workItem from="1623143339519" duration="4742000" />
       <workItem from="1623148563314" duration="17206000" />
-      <workItem from="1623226857545" duration="13983000" />
+      <workItem from="1623226857545" duration="18307000" />
     </task>
     <task id="LOCAL-00001" summary="DAVIDE&#10;- Primo test con thread ProduttoreNotizie.java&#10;- Continuazione codice">
       <created>1623155935289</created>
@@ -128,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623168284440</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06">
+      <created>1623241227584</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623241227584</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +155,7 @@
     <MESSAGE value="DAVIDE&#10;- Tempo in ms di tempoProduzione nel main della classe Pubblicatore.java" />
     <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica Primo Pomeriggio" />
     <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica Secondo Pomeriggio&#10;(Introduzione RMI)" />
-    <option name="LAST_COMMIT_MESSAGE" value="DAVIDE &amp; BENEDETTA&#10;- Modifica Secondo Pomeriggio&#10;(Introduzione RMI)" />
+    <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06" />
   </component>
 </project>
