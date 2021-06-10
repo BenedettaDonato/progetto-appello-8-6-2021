@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c184b27b-92eb-4eca-adac-704517252c60" name="Default Changelist" comment="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06">
+    <list default="true" id="c184b27b-92eb-4eca-adac-704517252c60" name="Default Changelist" comment="DAVIDE &amp; BENEDETTA&#10;- Modifica primo pomeriggio - 9/06">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Editoriale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Editoriale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FruitoreNotizieImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FruitoreNotizieImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProduttoreNotizie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProduttoreNotizie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pubblicatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pubblicatore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PubblicatoreImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PubblicatoreImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,13 +63,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,7 +94,7 @@
       <workItem from="1623143288583" duration="43000" />
       <workItem from="1623143339519" duration="4742000" />
       <workItem from="1623148563314" duration="17206000" />
-      <workItem from="1623226857545" duration="18307000" />
+      <workItem from="1623226857545" duration="24367000" />
     </task>
     <task id="LOCAL-00001" summary="DAVIDE&#10;- Primo test con thread ProduttoreNotizie.java&#10;- Continuazione codice">
       <created>1623155935289</created>
@@ -132,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623241227584</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DAVIDE &amp; BENEDETTA&#10;- Modifica primo pomeriggio - 9/06">
+      <created>1623246956318</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623246956319</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +162,7 @@
     <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica Primo Pomeriggio" />
     <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica Secondo Pomeriggio&#10;(Introduzione RMI)" />
     <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06" />
-    <option name="LAST_COMMIT_MESSAGE" value="DAVIDE &amp; BENEDETTA&#10;- Modifica prima mattina - 9/06" />
+    <MESSAGE value="DAVIDE &amp; BENEDETTA&#10;- Modifica primo pomeriggio - 9/06" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAVIDE &amp; BENEDETTA&#10;- Modifica primo pomeriggio - 9/06" />
   </component>
 </project>

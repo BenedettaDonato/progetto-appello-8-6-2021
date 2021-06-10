@@ -52,11 +52,24 @@ public class FruitoreNotizieImpl extends UnicastRemoteObject implements Fruitore
             FruitoreNotizieImpl [] fruitoreNotizie = new FruitoreNotizieImpl[numeroRandomFruitori];
 
             for(int i = 0; i < numeroRandomFruitori; i++){              //Creazione dei Fruitori Notizie.
-                int idFruitori = random.nextInt(999) + 1;         //Settando il Bound di nextInt a 999, diminuisce la probabilita che i fruitori creati abbiano lo stesso ID.
+                int idFruitori = random.nextInt(999) + 1;        //Settando il Bound di nextInt a 999, diminuisce la probabilita che i fruitori creati abbiano lo stesso ID.
                 fruitoreNotizie[i] = new FruitoreNotizieImpl("ID " + idFruitori);
                 int idRivista = random.nextInt(TipoRivista.values().length);
                 pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie[i], TipoRivista.values()[idRivista]);
             }
+
+            FruitoreNotizieImpl fruitoreNotizie1 = new FruitoreNotizieImpl("Test1");
+            FruitoreNotizieImpl fruitoreNotizie2 = new FruitoreNotizieImpl("Test2");
+
+            pubblicatore.rimuoviInteresseFruitore(fruitoreNotizie1, TipoRivista.SPORT);
+            pubblicatore.rimuoviInteresseFruitore(fruitoreNotizie2, TipoRivista.ATTUALITA);
+
+            pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie2, TipoRivista.SPORT);
+            pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie2, TipoRivista.SPORT);
+
+            pubblicatore.aggiungiInteresseFruitore(fruitoreNotizie1, TipoRivista.POLITICA);
+            pubblicatore.rimuoviInteresseFruitore(fruitoreNotizie1, TipoRivista.POLITICA);
+            pubblicatore.rimuoviInteresseFruitore(fruitoreNotizie1, TipoRivista.POLITICA);
 
         }else{
             //Non dovrebbe mai accadere.

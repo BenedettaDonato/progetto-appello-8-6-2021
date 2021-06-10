@@ -10,7 +10,6 @@ import java.util.*;
 public class PubblicatoreImpl extends UnicastRemoteObject implements Pubblicatore {
     private ArrayList<Editoriale> listaEditoriali = new ArrayList<>();
     private HashMap<FruitoreNotizie, HashSet<TipoRivista>> listaFruitori = new HashMap<>();     //Abbiamo scelto di utilizzare un HashSet perche non accetta duplicati rispetto ad un arrayList.
-                                                                                                //L'ordine in cui si estraggono gli elementi e' CASUALE come per l'ArrayList ma l'ordine non ci interessa.
 
     private ProduttoreNotizie arrayProduttoreNotizie[];
 
@@ -27,7 +26,7 @@ public class PubblicatoreImpl extends UnicastRemoteObject implements Pubblicator
 
         arrayProduttoreNotizie = new ProduttoreNotizie[numeroProduttoriNotizie];
         for (int i = 0; i < numeroProduttoriNotizie ; ++i){
-            ProduttoreNotizie produttoreNotizie = new ProduttoreNotizie(tempoRandomCreazioneNotizie.nextInt(3) + 1, this);
+            ProduttoreNotizie produttoreNotizie = new ProduttoreNotizie(tempoRandomCreazioneNotizie.nextInt(2) + 1, this);
             produttoreNotizie.start();
             arrayProduttoreNotizie[i] = produttoreNotizie;
         }
@@ -46,11 +45,13 @@ public class PubblicatoreImpl extends UnicastRemoteObject implements Pubblicator
 
     @Override
     public synchronized void trasmettiEditoriali() throws RemoteException {
+
         for(Editoriale editoriale : listaEditoriali){
             System.out.println("\nTipoRivista: " + editoriale.getTipoRivista() + "\n" + editoriale.getEditoriale());
             String notizieCopia = (editoriale.getEditoriale());                 //Facciamo una copia dell'editoriale (notizieCopia), in modo da non perdere il valore dell'editoriale quando lo cancelliamo.
             editoriale.svuotaEditoriale();                                      //Dopo aver fatto la copia, svuotiamo l'editoriale; le notizie le abbiamo salvate nella variabile notizieCopia, quindi non vanno perse.
 
+            HashSet<FruitoreNotizie> fruitoriDisconnessi = new HashSet<>();
             for (Map.Entry<FruitoreNotizie, HashSet<TipoRivista>> entry : listaFruitori.entrySet()) {
                 FruitoreNotizie fruitoreNotizie = entry.getKey();
                 HashSet<TipoRivista> interessiFruitore = entry.getValue();
@@ -59,10 +60,16 @@ public class PubblicatoreImpl extends UnicastRemoteObject implements Pubblicator
                         fruitoreNotizie.riceviEditoriale(notizieCopia, editoriale.getTipoRivista());
                     }catch (ConnectException e) {
                         System.err.println("Il Fruitore non e' piu raggiungibile");
+                        fruitoriDisconnessi.add(fruitoreNotizie);
                     }
                 }
             }
+            for(FruitoreNotizie fruitoreDaEliminare : fruitoriDisconnessi){
+                listaFruitori.remove(fruitoreDaEliminare);
+                System.err.println("Fruitore disconnesso");
+            }
         }
+
     }
 
     @Override
@@ -98,7 +105,7 @@ public class PubblicatoreImpl extends UnicastRemoteObject implements Pubblicator
                 listaFruitori.remove(fruitoreNotizie);
             }
          }else{
-            System.err.println("Il fruitore: " + fruitoreNotizie.getIdFruitoreNotizie() + " NON e' iscritto");
+            System.err.println("Rimozione fallita: Il fruitore " + fruitoreNotizie.getIdFruitoreNotizie() + " NON e' iscritto alla rivista " + tipoRivista + "\n");
         }
         System.out.println("\nIl fruitore " + fruitoreNotizie.getIdFruitoreNotizie() + " NON e' piu interessato alle notizie: " + tipoRivista + "\n");
     }
